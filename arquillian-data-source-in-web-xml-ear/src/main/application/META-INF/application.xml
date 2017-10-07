@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="6"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+    <display-name>arquillian-wildfly-database-drivers-ear</display-name>
+    <module>
+        <ejb>arquillian-wildfly-database-drivers-ejb-1.0-SNAPSHOT.jar</ejb>
+    </module>
+    <module>
+        <web>
+            <web-uri>arquillian-wildfly-database-drivers-web-1.0-SNAPSHOT.war</web-uri>
+            <context-root>/arquillian-wildfly-database-drivers-web</context-root>
+        </web>
+    </module>
+    <library-directory>lib</library-directory>
+    <data-source>
+        <name>java:app/jdbc/project1</name>
+        <class-name>org.apache.derby.jdbc.EmbeddedDataSource</class-name>
+        <server-name>localhost</server-name>
+        <database-name>project1</database-name>
+        <user>project1</user>
+        <password>project1</password>
+        <property>
+            <name>connectionAttributes</name>
+            <value>create=true</value>
+        </property>
+        <transactional>true</transactional>
+        <isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
+        <initial-pool-size>2</initial-pool-size>
+        <max-pool-size>10</max-pool-size>
+        <min-pool-size>5</min-pool-size>
+        <max-statements>0</max-statements>
+    </data-source>
+</application>

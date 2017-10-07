@@ -1,0 +1,5 @@
+target/
+arquillian-data-source-in-web-xml-jar/target/
+arquillian-data-source-in-web-xml-ejb/target/
+arquillian-data-source-in-web-xml-web/target/
+arquillian-data-source-in-web-xml-ear/target/
